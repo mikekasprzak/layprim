@@ -1,0 +1,19 @@
+/* Standard Wide Layout */
+._lpm_wide {
+	white-space: nowrap;
+	& > * {
+		display: inline-block;
+	}
+}
+
+/* Half Margin Wide Layout */
+._lpm_hmwide {
+	._lpm_wide;
+	& > * {
+		margin-left: 0.5em;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
