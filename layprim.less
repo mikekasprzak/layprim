@@ -1,19 +1,37 @@
-/* Standard Wide Layout */
-._lpm_wide {
-	white-space: nowrap;
-	& > * {
-		display: inline-block;
-	}
-}
-
-/* Half Margin Wide Layout */
-._lpm_hmwide {
-	._lpm_wide;
-	& > * {
-		margin-left: 0.5em;
-
-		&:first-child {
-			margin-left: 0;
+#LPM {
+	/* Standard Wide Layout */
+	.wide() {
+		white-space: nowrap;
+		& > * {
+			display: inline-block;
 		}
 	}
-}
+
+	/* Function that emits a Wide Layout with Margin gaps */
+	.mwide(0) {
+		.wide();
+	}
+	.mwide(@margin) {
+		.wide();
+		& > * {
+			margin-left: @margin;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	/* Quarter Margin Wide Layout */
+	.qmwide() {
+		.mwide(0.25em);
+	}
+	/* Half Margin Wide Layout */
+	.hmwide() {
+		.mwide(0.5em);
+	}
+	/* Full Margin Wide Layout */
+	.fmwide() {
+		.mwide(1em);
+	}
+} /* #LPM */
