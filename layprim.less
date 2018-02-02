@@ -1,5 +1,5 @@
 #LPM {
-	/* Standard Wide Layout */
+	/* Standard Wide Layout (no wrapping) */
 	.wide() {
 		white-space: nowrap;
 		& > * {
@@ -23,15 +23,42 @@
 	}
 
 	/* Quarter Margin Wide Layout */
-	.qmwide() {
-		.mwide(0.25em);
-	}
+	.qmwide() {.mwide(0.25em);}
 	/* Half Margin Wide Layout */
-	.hmwide() {
-		.mwide(0.5em);
-	}
+	.hmwide() {.mwide(0.5em);}
 	/* Full Margin Wide Layout */
-	.fmwide() {
-		.mwide(1em);
+	.fmwide() {.mwide(1em);}
+	/* Triple-Half Margin Wide Layout */
+	.tmwide() {.mwide(1.5em);}
+	/* Double Margin Wide Layout */
+	.dmwide() {.mwide(2em);}
+
+	/* Quarter Root Margin Wide Layout */
+	.qrwide() {.mwide(0.25rem);}
+	/* Half Root Margin Wide Layout */
+	.hrwide() {.mwide(0.5rem);}
+	/* Full Root Margin Wide Layout */
+	.frwide() {.mwide(1rem);}
+	/* Triple-Half Root  Margin Wide Layout */
+	.trwide() {.mwide(1.5rem);}
+	/* Double Root Margin Wide Layout */
+	.drwide() {.mwide(2rem);}
+
+
+	/* Standard Wrapping Layout */
+	.wrap() {
+
+	}
+
+	/* Standard Wide-Fit Layout */
+	.fit() {
+		display: flex;
+
+		.child(@flex: 1) {
+			flex: @flex;
+		}
+	}
+	.fill(@flex) {
+		flex: @flex;
 	}
 } /* #LPM */
