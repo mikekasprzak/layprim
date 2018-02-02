@@ -6,6 +6,16 @@
 			display: inline-block;
 		}
 	}
+	.wide(@margin) {
+		.wide();
+		& > * {
+			margin-left: @margin;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
 
 	/* Function that emits a Wide Layout with Margin gaps */
 	.mwide(0) {
@@ -45,9 +55,14 @@
 	.drwide() {.mwide(2rem);}
 
 
+	/* Standard Tall Layout */
+	.tall() {
+	}
+
+
 	/* Standard Wrapping Layout */
 	.wrap() {
-
+		/* ... */
 	}
 
 	/* Standard Wide-Fit Layout */
