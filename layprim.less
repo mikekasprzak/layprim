@@ -7,8 +7,9 @@
 		}
 	}
 	.wide(@margin) {
-		.wide();
+		white-space: nowrap;
 		& > * {
+			display: inline-block;
 			margin-left: @margin;
 
 			&:first-child {
@@ -22,14 +23,7 @@
 		.wide();
 	}
 	.mwide(@margin) {
-		.wide();
-		& > * {
-			margin-left: @margin;
-
-			&:first-child {
-				margin-left: 0;
-			}
-		}
+		.wide(@margin);
 	}
 
 	/* Quarter Margin Wide Layout */
